@@ -1,0 +1,23 @@
+port: 9000
+database:
+  mongodbUrl: 'mongodb://localhost:27017/hilton'
+API:
+  createReservations:
+    tableId: 
+        isInt: true
+        errorMessage: 'TableId is required please provide correct value'
+    guestId:
+        isInt: true
+        errorMessage: 'GuestId is required please provide correct value'
+    bookAt: 
+        isISO8601: true
+        isBefore: true
+        errorMessage: 'BookAt is required please provide correct value'
+    arriveAt: 
+        isISO8601: true
+        isBefore: true
+        errorMessage: 'ArriveAt is required please provide correct value'
+  getReservations:
+    ids:
+      isArray: true
+      errorMessage: 'Ids are required please provide correct value'
