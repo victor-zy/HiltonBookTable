@@ -13,11 +13,20 @@ API:
         isISO8601: true
         isBefore: true
         errorMessage: 'BookAt is required please provide correct value'
-    arriveAt: 
+    arrivalAt: 
         isISO8601: true
         isBefore: true
-        errorMessage: 'ArriveAt is required please provide correct value'
+        errorMessage: 'arrivalAt is required please provide correct value'
   getReservations:
     ids:
       isArray: true
       errorMessage: 'Ids are required please provide correct value'
+  registGuest:
+    name:
+      errorMessage: 'Name is required please provide correct value'
+    mobile:
+      errorMessage: 'Mobile is required please provide correct value'
+  getGuestInfo:
+    id:
+      isInt: true
+      errorMessage: 'Id is required please provide correct value'

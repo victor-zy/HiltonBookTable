@@ -1,0 +1,19 @@
+type Reservation {
+    bookId: ID!,
+    tableId: ID,
+    guestId: ID,
+    bookAt: String,
+    arrivalAt: String,
+    isUsed: Boolean,
+    isCanceled: Boolean,
+    createdAt: String,
+    updatedAt: String
+}
+
+type Query {
+    getReservations(bookId: ID!): [Reservation],
+}
+
+type Mutation {
+    createReservation(tableId: ID, guestId: ID, bookAt: String, arrivalAt: String, isUsed: Boolean, isCanceled: Boolean): Reservation,
+}

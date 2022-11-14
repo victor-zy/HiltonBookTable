@@ -1,6 +1,6 @@
 /**
  * @description 桌子信息
- * @param {Integer} id 
+ * @param {Integer} tableId
  * @param {Boolean} isBooked
  * @param {Object} sizeInfo
  * @param {Date} createdAt
@@ -8,7 +8,7 @@
  */
 let counter = 100;
 const Tables = new mongoose.Schema({
-    id: {type: Number, required: true, default: () => counter++},
+    tableId: {type: Number, required: true, default: () => counter++},
     isBooked: {type: Boolean, required: true},
     sizeInfo: {
         type: String,
