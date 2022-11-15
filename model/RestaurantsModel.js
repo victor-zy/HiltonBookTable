@@ -1,6 +1,6 @@
 /**
  * @description 预定信息记录表
- * @param {Integer} id 
+ * @param {Integer} bookId 
  * @param {String} tableId
  * @param {String} guestId
  * @param {Date} bookedAt

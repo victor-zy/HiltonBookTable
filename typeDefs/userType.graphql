@@ -1,3 +1,4 @@
+# 客人预定信息
 type Reservation {
     bookId: ID!,
     tableId: ID,
@@ -10,10 +11,59 @@ type Reservation {
     updatedAt: String
 }
 
+# 员工信息
+type Employee {
+    employeeId: Int!,
+    name: String,
+    password: String,
+    createdAt: String,
+    updatedAt: String,
+}
+
+# 顾客信息
+type Guest {
+    customerId: Int!,
+    name: String,
+    mobile: String,
+    createdAt: String,
+    updatedAt: String
+}
+
+# 操作记录
+type Log {
+    operationId: Int!,
+    action: String,
+    bookId: Int,
+    operation: String,
+    createdAt: String,
+    updatedAt: String,
+}
+
+# 桌子信息
+type Table {
+    tableId: Int!,
+    isBooked: Boolean,
+    sizeInfo: String,
+    createdAt: String,
+    updatedAt: String,
+}
+
+input Options  {
+    bookId: ID,
+    bookAt: String, 
+    isUsed: Boolean, 
+    isCanceled: Boolean
+}
+
 type Query {
-    getReservations(bookId: ID!): [Reservation],
+    # 获取订单信息
+    getReservations(params: Options): [Reservation],
 }
 
 type Mutation {
+    # 创建订单
     createReservation(tableId: ID, guestId: ID, bookAt: String, arrivalAt: String, isUsed: Boolean, isCanceled: Boolean): Reservation,
+    # 更新预定信息
+    updateReservation(tableId: ID, guestId: ID, bookAt: String, arrivalAt: String, isUsed: Boolean, isCanceled: Boolean): Reservation,
+    
 }

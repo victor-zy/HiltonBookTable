@@ -7,6 +7,7 @@
  * @param {Date} createdAt
  * @param {Date} updatedAt
  */
+const mongoose = require('mongoose');
 let counter = 0;
 const Log = new mongoose.Schema({
     operationId: {type: Number, required: true, default: () => counter++},

@@ -6,6 +6,7 @@
  * @param {Date} createdAt
  * @param {Date} updatedAt
  */
+const mongoose = require('mongoose');
 let counter = 100;
 const Tables = new mongoose.Schema({
     tableId: {type: Number, required: true, default: () => counter++},
